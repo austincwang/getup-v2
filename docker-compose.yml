@@ -1,0 +1,25 @@
+services:
+  postgres:
+    container_name: postgres-sql-getup
+    image: postgres
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      PGDATA: /var/lib/postgresql/data
+      POSTGRES_DB: getup_network
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - 5432:5432
+    networks:
+      - spring-project
+    restart: unless-stopped
+
+
+volumes:
+  postgres:
+    driver: local
+
+networks:
+  spring-project:
+    driver: bridge
