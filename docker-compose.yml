@@ -14,6 +14,12 @@ services:
     networks:
       - spring-project
     restart: unless-stopped
+  mail-dev:
+    container_name: mail-dev-getup
+    image: maildev/maildev
+    ports:
+      - 1080:1080
+      - 1025:1025
 
 
 volumes:
