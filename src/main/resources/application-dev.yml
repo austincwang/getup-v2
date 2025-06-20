@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/getup_network
+    url: jdbc:postgresql://localhost:5435/getup_network
     username: username
     password: password
     driver-class-name: org.postgresql.Driver
@@ -29,6 +29,15 @@ spring:
         timeout: 3000
         write timeout: 5000
 
-
+application:
+  security:
+    jwt:
+      secret-key: this_is_a_super_secret_key
+      expiration: 8640000
+  mailing:
+    frontend:
+      activation-url: http://localhost:4200/activate-account
+server:
+  port: 8088
 
 
